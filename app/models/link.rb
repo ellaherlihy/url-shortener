@@ -12,6 +12,10 @@ class Link < ApplicationRecord
     super ShortCode.decode(id)
   end
 
+  after_save_commit if: :url_previously_changed? do
+    MetadataJob.perform_later(to_param)
+  end
+
   def domain
     URI(url).host rescue StandardError URI::InvalidURIError
   end
