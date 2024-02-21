@@ -13,11 +13,11 @@
     </div>
 
     <div class="col-span-2 text-center text-xs">
-      <%= link_to (pluralize link.views_count, "view"), link, class: "px-3 py-2 rounded bg-gray-100 no-underline" %>
+      <%= link_to (pluralize link.views_count, "view"), link, class: "px-2 py-1.5 rounded bg-gray-100 no-underline" %>
     </div>
 
-     <div class="text-xs">
-      <%= link_to "Copy", link, class: "px-3 py-2 rounded bg-gray-100 no-underline" %>
+     <div class="text-center text-xs">
+      <%= button_tag "Copy", class: "font-medium px-2 py-1.5 rounded bg-gray-100 no-underline", data: {controller: "clipboard", clipboard_text: view_url(link)} %>
     </div>
 
   </div>
