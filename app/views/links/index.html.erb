@@ -1,7 +1,5 @@
-<h1>URL Shortener</h1>
-
 <%= render partial: "form", locals: {link: @link} %>
 
 <div id="links" class="mt-8 flex flex-col divide-y divide-gray-100">
-  <%= render @links %>  <%# This line tells Rails to render a partial for each element in the @links collection.>
+  <%= render @links %>
 </div>
